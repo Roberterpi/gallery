@@ -1,0 +1,8 @@
+* {
+  box-sizing: border-box;
+}
+
+.gallery-img {
+  display: none;
+  max-height: 600px;
+}
