@@ -14,6 +14,17 @@ function previous() {
   }
 }
 
+function next() {
+  prevBtn.disabled = false;
+  nodes[currentlySelected].classList.remove("active");
+  currentlySelected++;
+  nodes[currentlySelected].classList.add("active");
+
+  if (currentlySelected + 1 === nodes.length) {
+    nextBtn.disabled = true;
+  }
+}
+
 function init() {
   prevBtn.addEventListener("click", function() {
     previous();
