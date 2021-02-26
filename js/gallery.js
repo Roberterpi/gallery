@@ -1,29 +1,23 @@
-let currentlySelected = 0;
-const nodes = document.querySelectorAll(".gallery-img");
 const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");
+const galerryImgs = document.querySelectorAll(".gallery-img");
+let currentlySelected = 0;
 
-function previous() {
-  nextBtn.disabled = false;
-  nodes[currentlySelected].classList.remove("active");
-  currentlySelected--;
-  nodes[currentlySelected].classList.add("active");
+prevBtn.addEventListener('click', function() {
 
-  if (currentlySelected === 0) {
-    prevBtn.disabled = true;
-  }
-}
+});
 
-function next() {
+nextBtn.addEventListener('click', function() {
+
+  galerryImgs[currentlySelected].classList.remove('active');
+  currentlySelected++; //currentlySelected = currentlySelected + 1
+  galerryImgs[currentlySelected].classList.add('active');
   prevBtn.disabled = false;
-  nodes[currentlySelected].classList.remove("active");
-  currentlySelected++;
-  nodes[currentlySelected].classList.add("active");
 
-  if (currentlySelected + 1 === nodes.length) {
+  if (galerryImgs.lenght === currentlySelected + 1) {
     nextBtn.disabled = true;
   }
-}
+});
 
 function init() {
   prevBtn.addEventListener("click", function() {
